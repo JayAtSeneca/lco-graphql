@@ -17,7 +17,27 @@ const schema = buildSchema(`
         lastName: String
         experience: Int
     }
-    
+
+    enum Stack {
+        FRONT_END
+        BACK_END
+        FULL_STACK
+    }
+
+    type Query {
+        getCourse(id: ID): Course
+    }
+
+    input CourseInput {
+        id: ID
+        courseName: String!
+        category: String!
+        price: Int!
+        language: String!
+        email: String!
+        stack: Stack!
+        teachingAssists: [TeachingAssistsInput]
+    }
 `);
 
 export default schema;
