@@ -18,3 +18,15 @@ class Course {
 
 const courseHolder = {};
 
+const resolvers = {
+    getCourse: ({ id }) => {
+        return new Course(id, courseHolder[id]);
+    },
+    createCourse: ({ input }) => {
+        let id = nanoid();
+        courseHolder[id] = input;
+        return new Course(id, input);
+    }
+};
+
+export default resolvers;
