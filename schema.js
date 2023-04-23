@@ -11,6 +11,13 @@ const schema = buildSchema(`
         stack: String
         teachingAssists: [teachingAssists]
     }
+
+    type TeachingAssists {
+        firstName: String
+        lastName: String
+        experience: Int
+    }
+    
 `);
 
 export default schema;
